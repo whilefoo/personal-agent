@@ -7,6 +7,6 @@ import { PluginSettings } from "./plugin-input";
  *
  * ubiquity:listeners: ["issue_comment.created", ...]
  */
-export type SupportedEvents = "issue_comment.created";
+export type SupportedEvents = "issue_comment.created" | "issue_comment.edited" | "pull_request_review_comment.created" | "pull_request_review_comment.edited";
 
 export type Context<T extends SupportedEvents = SupportedEvents> = PluginContext<PluginSettings, Env, null, T>;

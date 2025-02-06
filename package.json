@@ -32,7 +32,7 @@
     "open-source"
   ],
   "dependencies": {
-    "@sinclair/typebox": "0.34.15",
+    "@sinclair/typebox": "0.34.3",
     "@ubiquity-os/plugin-sdk": "^2.0.6",
     "@ubiquity-os/ubiquity-os-logger": "^1.4.0",
     "dotenv": "16.4.7",

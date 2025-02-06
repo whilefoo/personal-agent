@@ -73,7 +73,7 @@ describe("Personal Agent Plugin tests", () => {
 function createContext(commentBody: string, repoId: number = 1, payloadSenderId: number = 1, commentId: number = 1, issueOne: number = 1) {
   const repo = db.repo.findFirst({ where: { id: { equals: repoId } } }) as unknown as Context["payload"]["repository"];
   const sender = db.users.findFirst({ where: { id: { equals: payloadSenderId } } }) as unknown as Context["payload"]["sender"];
-  const issue1 = db.issue.findFirst({ where: { id: { equals: issueOne } } }) as unknown as Context["payload"]["issue"];
+  const issue1 = db.issue.findFirst({ where: { id: { equals: issueOne } } }) as unknown as Context<"issue_comment.created">["payload"]["issue"];
 
   createComment(commentBody, commentId); // create it first then pull it from the DB and feed it to _createContext
   const comment = db.issueComments.findFirst({ where: { id: { equals: commentId } } }) as unknown as Context["payload"]["comment"];
@@ -105,7 +105,7 @@ function createContext(commentBody: string, repoId: number = 1, payloadSenderId:
 function createContextInner(
   repo: Context["payload"]["repository"],
   sender: Context["payload"]["sender"],
-  issue: Context["payload"]["issue"],
+  issue: Context<"issue_comment.created">["payload"]["issue"],
   comment: Context["payload"]["comment"]
 ) {
   return {
