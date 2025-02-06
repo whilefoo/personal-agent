@@ -6342,9 +6342,9 @@ var t = {
         }
       };
       var k = T;
-      var _ = "2.19.5";
-      var D = { version: _ };
-      var F = Object.freeze({ version: _, default: D });
+      var D = "2.19.5";
+      var _ = { version: D };
+      var F = Object.freeze({ version: D, default: _ });
       var require$$2 = () => console.log("You must import the full version of Bottleneck in order to use this feature.");
       var require$$3 = () => console.log("You must import the full version of Bottleneck in order to use this feature.");
       var require$$4 = () => console.log("You must import the full version of Bottleneck in order to use this feature.");
@@ -9330,8 +9330,8 @@ var t = {
       kReset: R,
       kServerName: T,
       kClient: k,
-      kBusy: _,
-      kParser: D,
+      kBusy: D,
+      kParser: _,
       kConnect: F,
       kBlocking: S,
       kResuming: v,
@@ -9394,8 +9394,8 @@ var t = {
       },
     } = me;
     let ke = false;
-    const _e = Buffer[Symbol.species];
-    const De = Symbol("kClosedResolve");
+    const De = Buffer[Symbol.species];
+    const _e = Symbol("kClosedResolve");
     const Fe = {};
     try {
       const e = r(1637);
@@ -9433,8 +9433,8 @@ var t = {
           maxCachedSessions: y,
           maxRedirections: R,
           connect: k,
-          maxRequestsPerClient: _,
-          localAddress: D,
+          maxRequestsPerClient: D,
+          localAddress: _,
           maxResponseSize: F,
           autoSelectFamily: S,
           autoSelectFamilyAttemptTimeout: U,
@@ -9488,10 +9488,10 @@ var t = {
         if (R != null && (!Number.isInteger(R) || R < 0)) {
           throw new p("maxRedirections must be a positive number");
         }
-        if (_ != null && (!Number.isInteger(_) || _ < 0)) {
+        if (D != null && (!Number.isInteger(D) || D < 0)) {
           throw new p("maxRequestsPerClient must be a positive number");
         }
-        if (D != null && (typeof D !== "string" || o.isIP(D) === 0)) {
+        if (_ != null && (typeof _ !== "string" || o.isIP(_) === 0)) {
           throw new p("localAddress must be valid string IP address");
         }
         if (F != null && (!Number.isInteger(F) || F < -1)) {
@@ -9528,7 +9528,7 @@ var t = {
         this[$] = I == null ? 1e3 : I;
         this[z] = this[V];
         this[T] = null;
-        this[ue] = D != null ? D : null;
+        this[ue] = _ != null ? _ : null;
         this[v] = 0;
         this[x] = 0;
         this[Y] = `host: ${this[b].hostname}${this[b].port ? `:${this[b].port}` : ""}\r\n`;
@@ -9536,8 +9536,8 @@ var t = {
         this[ee] = s != null ? s : 3e5;
         this[re] = B == null ? true : B;
         this[oe] = R;
-        this[Ae] = _;
-        this[De] = null;
+        this[Ae] = D;
+        this[_e] = null;
         this[ge] = F > -1 ? F : -1;
         this[pe] = "h1";
         this[de] = null;
@@ -9566,7 +9566,7 @@ var t = {
       get [P]() {
         return !!this[K] && !this[M] && !this[K].destroyed;
       }
-      get [_]() {
+      get [D]() {
         const e = this[K];
         return (e && (e[R] || e[O] || e[S])) || this[G] >= (this[W] || 1) || this[N] > 0;
       }
@@ -9585,7 +9585,7 @@ var t = {
         } else {
           resume(this, true);
         }
-        if (this[v] && this[x] !== 2 && this[_]) {
+        if (this[v] && this[x] !== 2 && this[D]) {
           this[x] = 2;
         }
         return this[x] < 2;
@@ -9595,7 +9595,7 @@ var t = {
           if (!this[G]) {
             e(null);
           } else {
-            this[De] = e;
+            this[_e] = e;
           }
         });
       }
@@ -9607,9 +9607,9 @@ var t = {
             errorRequest(this, s, e);
           }
           const callback = () => {
-            if (this[De]) {
-              this[De]();
-              this[De] = null;
+            if (this[_e]) {
+              this[_e]();
+              this[_e] = null;
             }
             t();
           };
@@ -9682,7 +9682,7 @@ var t = {
           wasm_on_status: (e, t, r) => {
             s.strictEqual(Oe.ptr, e);
             const o = t - Me + Le.byteOffset;
-            return Oe.onStatus(new _e(Le.buffer, o, r)) || 0;
+            return Oe.onStatus(new De(Le.buffer, o, r)) || 0;
           },
           wasm_on_message_begin: (e) => {
             s.strictEqual(Oe.ptr, e);
@@ -9691,12 +9691,12 @@ var t = {
           wasm_on_header_field: (e, t, r) => {
             s.strictEqual(Oe.ptr, e);
             const o = t - Me + Le.byteOffset;
-            return Oe.onHeaderField(new _e(Le.buffer, o, r)) || 0;
+            return Oe.onHeaderField(new De(Le.buffer, o, r)) || 0;
           },
           wasm_on_header_value: (e, t, r) => {
             s.strictEqual(Oe.ptr, e);
             const o = t - Me + Le.byteOffset;
-            return Oe.onHeaderValue(new _e(Le.buffer, o, r)) || 0;
+            return Oe.onHeaderValue(new De(Le.buffer, o, r)) || 0;
           },
           wasm_on_headers_complete: (e, t, r, o) => {
             s.strictEqual(Oe.ptr, e);
@@ -9705,7 +9705,7 @@ var t = {
           wasm_on_body: (e, t, r) => {
             s.strictEqual(Oe.ptr, e);
             const o = t - Me + Le.byteOffset;
-            return Oe.onBody(new _e(Le.buffer, o, r)) || 0;
+            return Oe.onBody(new De(Le.buffer, o, r)) || 0;
           },
           wasm_on_message_complete: (e) => {
             s.strictEqual(Oe.ptr, e);
@@ -9911,8 +9911,8 @@ var t = {
         this.headers = [];
         this.headersSize = 0;
         o.unshift(e);
-        o[D].destroy();
-        o[D] = null;
+        o[_].destroy();
+        o[_] = null;
         o[k] = null;
         o[j] = null;
         o.removeListener("error", onSocketError)
@@ -10089,13 +10089,13 @@ var t = {
       }
     }
     function onSocketReadable() {
-      const { [D]: e } = this;
+      const { [_]: e } = this;
       if (e) {
         e.readMore();
       }
     }
     function onSocketError(e) {
-      const { [k]: t, [D]: r } = this;
+      const { [k]: t, [_]: r } = this;
       s(e.code !== "ERR_TLS_CERT_ALTNAME_INVALID");
       if (t[pe] !== "h2") {
         if (e.code === "ECONNRESET" && r.statusCode && !r.shouldKeepAlive) {
@@ -10118,7 +10118,7 @@ var t = {
       }
     }
     function onSocketEnd() {
-      const { [D]: e, [k]: t } = this;
+      const { [_]: e, [k]: t } = this;
       if (t[pe] !== "h2") {
         if (e.statusCode && !e.shouldKeepAlive) {
           e.onMessageComplete();
@@ -10128,13 +10128,13 @@ var t = {
       i.destroy(this, new I("other side closed", i.getSocketInfo(this)));
     }
     function onSocketClose() {
-      const { [k]: e, [D]: t } = this;
+      const { [k]: e, [_]: t } = this;
       if (e[pe] === "h1" && t) {
         if (!this[j] && t.statusCode && !t.shouldKeepAlive) {
           t.onMessageComplete();
         }
-        this[D].destroy();
-        this[D] = null;
+        this[_].destroy();
+        this[_] = null;
       }
       const r = this[j] || new I("closed", i.getSocketInfo(this));
       e[K] = null;
@@ -10216,7 +10216,7 @@ var t = {
           o[O] = false;
           o[R] = false;
           o[S] = false;
-          o[D] = new Parser(e, o, Ne);
+          o[_] = new Parser(e, o, Ne);
         }
         o[ne] = 0;
         o[Ae] = e[Ae];
@@ -10280,9 +10280,9 @@ var t = {
           s(e[N] === 0);
           return;
         }
-        if (e[De] && !e[G]) {
-          e[De]();
-          e[De] = null;
+        if (e[_e] && !e[G]) {
+          e[_e]();
+          e[_e] = null;
           return;
         }
         const r = e[K];
@@ -10297,18 +10297,18 @@ var t = {
             r[H] = false;
           }
           if (e[G] === 0) {
-            if (r[D].timeoutType !== Ve) {
-              r[D].setTimeout(e[z], Ve);
+            if (r[_].timeoutType !== Ve) {
+              r[_].setTimeout(e[z], Ve);
             }
-          } else if (e[U] > 0 && r[D].statusCode < 200) {
-            if (r[D].timeoutType !== xe) {
+          } else if (e[U] > 0 && r[_].statusCode < 200) {
+            if (r[_].timeoutType !== xe) {
               const t = e[L][e[q]];
               const s = t.headersTimeout != null ? t.headersTimeout : e[ee];
-              r[D].setTimeout(s, xe);
+              r[_].setTimeout(s, xe);
             }
           }
         }
-        if (e[_]) {
+        if (e[D]) {
           e[x] = 2;
         } else if (e[x] === 2) {
           if (t) {
@@ -10826,9 +10826,9 @@ var t = {
         t.uncork();
         r.onBodySent(e);
         if (!c) {
-          if (t[D].timeout && t[D].timeoutType === xe) {
-            if (t[D].timeout.refresh) {
-              t[D].timeout.refresh();
+          if (t[_].timeout && t[_].timeoutType === xe) {
+            if (t[_].timeout.refresh) {
+              t[_].timeout.refresh();
             }
           }
         }
@@ -10860,9 +10860,9 @@ var t = {
             process.emitWarning(new u());
           }
         }
-        if (e[D].timeout && e[D].timeoutType === xe) {
-          if (e[D].timeout.refresh) {
-            e[D].timeout.refresh();
+        if (e[_].timeout && e[_].timeoutType === xe) {
+          if (e[_].timeout.refresh) {
+            e[_].timeout.refresh();
           }
         }
         resume(r);
@@ -12718,8 +12718,8 @@ var t = {
       T = (e) => Math.floor(Math.random(e));
     }
     let k = globalThis.ReadableStream;
-    const _ = I ?? w;
-    const D = new TextEncoder();
+    const D = I ?? w;
+    const _ = new TextEncoder();
     const F = new TextDecoder();
     function extractBody(e, t = false) {
       if (!k) {
@@ -12733,7 +12733,7 @@ var t = {
       } else {
         s = new k({
           async pull(e) {
-            e.enqueue(typeof l === "string" ? D.encode(l) : l);
+            e.enqueue(typeof l === "string" ? _.encode(l) : l);
             queueMicrotask(() => a(e));
           },
           start() {},
@@ -12767,11 +12767,11 @@ var t = {
         let A = false;
         for (const [t, n] of e) {
           if (typeof n === "string") {
-            const e = D.encode(r + `; name="${escape(normalizeLinefeeds(t))}"` + `\r\n\r\n${normalizeLinefeeds(n)}\r\n`);
+            const e = _.encode(r + `; name="${escape(normalizeLinefeeds(t))}"` + `\r\n\r\n${normalizeLinefeeds(n)}\r\n`);
             s.push(e);
             u += e.byteLength;
           } else {
-            const e = D.encode(
+            const e = _.encode(
               `${r}; name="${escape(normalizeLinefeeds(t))}"` +
                 (n.name ? `; filename="${escape(n.name)}"` : "") +
                 "\r\n" +
@@ -12785,7 +12785,7 @@ var t = {
             }
           }
         }
-        const n = D.encode(`--${t}--`);
+        const n = _.encode(`--${t}--`);
         s.push(n);
         u += n.byteLength;
         if (A) {
@@ -12942,14 +12942,14 @@ var t = {
                 });
                 r.on("end", () => {
                   n.push(Buffer.from(o, "base64"));
-                  t.append(e, new _(n, s, { type: A }));
+                  t.append(e, new D(n, s, { type: A }));
                 });
               } else {
                 r.on("data", (e) => {
                   n.push(e);
                 });
                 r.on("end", () => {
-                  t.append(e, new _(n, s, { type: A }));
+                  t.append(e, new D(n, s, { type: A }));
                 });
               }
             });
@@ -13166,7 +13166,7 @@ var t = {
         }
       })();
     let k;
-    const _ =
+    const D =
       globalThis.structuredClone ??
       function structuredClone(e, t = undefined) {
         if (arguments.length === 0) {
@@ -13182,7 +13182,7 @@ var t = {
       };
     e.exports = {
       DOMException: T,
-      structuredClone: _,
+      structuredClone: D,
       subresource: b,
       forbiddenMethods: y,
       requestBodyHeader: Q,
@@ -14054,8 +14054,8 @@ var t = {
       crossOriginResourcePolicyCheck: R,
       determineRequestsReferrer: T,
       coarsenedSharedCurrentTime: k,
-      createDeferredPromise: _,
-      isBlobLike: D,
+      createDeferredPromise: D,
+      isBlobLike: _,
       sameOrigin: F,
       isCancelled: S,
       isAborted: v,
@@ -14115,7 +14115,7 @@ var t = {
     }
     function fetch(e, t = {}) {
       ge.argumentLengthCheck(arguments, 1, { header: "globalThis.fetch" });
-      const r = _();
+      const r = D();
       let o;
       try {
         o = new c(e, t);
@@ -14389,7 +14389,7 @@ var t = {
             return Promise.resolve(o("NetworkError when attempting to fetch resource."));
           }
           const s = de(e.toString());
-          if (t.method !== "GET" || !D(s)) {
+          if (t.method !== "GET" || !_(s)) {
             return Promise.resolve(o("invalid method"));
           }
           const A = q(s);
@@ -14990,7 +14990,7 @@ var t = {
       requestDuplex: w,
     } = r(7326);
     const { kEnumerableProperty: b } = l;
-    const { kHeaders: R, kSignal: T, kState: k, kGuard: _, kRealm: D } = r(9710);
+    const { kHeaders: R, kSignal: T, kState: k, kGuard: D, kRealm: _ } = r(9710);
     const { webidl: F } = r(4222);
     const { getGlobalOrigin: S } = r(5628);
     const { URLSerializer: v } = r(4322);
@@ -15010,7 +15010,7 @@ var t = {
         F.argumentLengthCheck(arguments, 1, { header: "Request constructor" });
         e = F.converters.RequestInfo(e);
         t = F.converters.RequestInit(t);
-        this[D] = {
+        this[_] = {
           settingsObject: {
             baseUrl: S(),
             get origin() {
@@ -15021,7 +15021,7 @@ var t = {
         };
         let o = null;
         let A = null;
-        const c = this[D].settingsObject.baseUrl;
+        const c = this[_].settingsObject.baseUrl;
         let C = null;
         if (typeof e === "string") {
           let t;
@@ -15040,7 +15040,7 @@ var t = {
           o = e[k];
           C = e[T];
         }
-        const m = this[D].settingsObject.origin;
+        const m = this[_].settingsObject.origin;
         let Q = "client";
         if (o.window?.constructor?.name === "EnvironmentSettingsObject" && g(o.window, m)) {
           Q = o.window;
@@ -15055,7 +15055,7 @@ var t = {
           method: o.method,
           headersList: o.headersList,
           unsafeRequest: o.unsafeRequest,
-          client: this[D].settingsObject,
+          client: this[_].settingsObject,
           window: Q,
           priority: o.priority,
           origin: o.origin,
@@ -15095,7 +15095,7 @@ var t = {
             } catch (t) {
               throw new TypeError(`Referrer "${e}" is not a valid URL.`, { cause: t });
             }
-            if ((t.protocol === "about:" && t.hostname === "client") || (m && !g(t, this[D].settingsObject.baseUrl))) {
+            if ((t.protocol === "about:" && t.hostname === "client") || (m && !g(t, this[_].settingsObject.baseUrl))) {
               o.referrer = "client";
             } else {
               o.referrer = t;
@@ -15152,7 +15152,7 @@ var t = {
         this[k] = o;
         const w = new AbortController();
         this[T] = w.signal;
-        this[T][D] = this[D];
+        this[T][_] = this[_];
         if (C != null) {
           if (!C || typeof C.aborted !== "boolean" || typeof C.addEventListener !== "function") {
             throw new TypeError("Failed to construct 'Request': member signal is not of type AbortSignal.");
@@ -15181,13 +15181,13 @@ var t = {
         }
         this[R] = new n(N);
         this[R][U] = o.headersList;
-        this[R][_] = "request";
-        this[R][D] = this[D];
+        this[R][D] = "request";
+        this[R][_] = this[_];
         if (y === "no-cors") {
           if (!I.has(o.method)) {
             throw new TypeError(`'${o.method} is unsupported in no-cors mode.`);
           }
-          this[R][_] = "request-no-cors";
+          this[R][D] = "request-no-cors";
         }
         if (B) {
           const e = this[R][U];
@@ -15323,11 +15323,11 @@ var t = {
         const e = cloneRequest(this[k]);
         const t = new Request(N);
         t[k] = e;
-        t[D] = this[D];
+        t[_] = this[_];
         t[R] = new n(N);
         t[R][U] = e.headersList;
-        t[R][_] = this[R][_];
         t[R][D] = this[R][D];
+        t[R][_] = this[R][_];
         const r = new AbortController();
         if (this.signal.aborted) {
           r.abort(this.signal.reason);
@@ -15462,8 +15462,8 @@ var t = {
     const { webidl: R } = r(4222);
     const { FormData: T } = r(3073);
     const { getGlobalOrigin: k } = r(5628);
-    const { URLSerializer: _ } = r(4322);
-    const { kHeadersList: D, kConstruct: F } = r(6443);
+    const { URLSerializer: D } = r(4322);
+    const { kHeadersList: _, kConstruct: F } = r(6443);
     const S = r(2613);
     const { types: v } = r(9023);
     const U = globalThis.ReadableStream || r(3774).ReadableStream;
@@ -15474,7 +15474,7 @@ var t = {
         const t = new Response();
         t[B] = makeNetworkError();
         t[b] = e;
-        t[y][D] = t[B].headersList;
+        t[y][_] = t[B].headersList;
         t[y][w] = "immutable";
         t[y][b] = e;
         return t;
@@ -15513,7 +15513,7 @@ var t = {
         o[y][w] = "immutable";
         o[y][b] = r;
         o[B].status = t;
-        const A = I(_(s));
+        const A = I(D(s));
         o[B].headersList.append("location", A);
         return o;
       }
@@ -15526,7 +15526,7 @@ var t = {
         this[B] = makeResponse({});
         this[y] = new s(F);
         this[y][w] = "response";
-        this[y][D] = this[B].headersList;
+        this[y][_] = this[B].headersList;
         this[y][b] = this[b];
         let r = null;
         if (e != null) {
@@ -15546,7 +15546,7 @@ var t = {
         if (t === null) {
           return "";
         }
-        return _(t, true);
+        return D(t, true);
       }
       get redirected() {
         R.brandCheck(this, Response);
@@ -15585,7 +15585,7 @@ var t = {
         const t = new Response();
         t[B] = e;
         t[b] = this[b];
-        t[y][D] = e.headersList;
+        t[y][_] = e.headersList;
         t[y][w] = this[y][w];
         t[y][b] = this[y][b];
         return t;
@@ -18760,7 +18760,7 @@ var t = {
     const R = Symbol("get dispatcher");
     const T = Symbol("add client");
     const k = Symbol("remove client");
-    const _ = Symbol("stats");
+    const D = Symbol("stats");
     class PoolBase extends s {
       constructor() {
         super();
@@ -18797,7 +18797,7 @@ var t = {
         this[b] = (t, r, s) => {
           e.emit("connectionError", t, [e, ...r], s);
         };
-        this[_] = new h(this);
+        this[D] = new h(this);
       }
       get [l]() {
         return this[C];
@@ -18830,7 +18830,7 @@ var t = {
         return e;
       }
       get stats() {
-        return this[_];
+        return this[D];
       }
       async [p]() {
         if (this[m].isEmpty()) {
@@ -19851,8 +19851,8 @@ var t = {
     const { WebsocketFrameSend: b } = r(1237);
     const { ByteParser: R } = r(3171);
     const { kEnumerableProperty: T, isBlobLike: k } = r(3440);
-    const { getGlobalDispatcher: _ } = r(2581);
-    const { types: D } = r(9023);
+    const { getGlobalDispatcher: D } = r(2581);
+    const { types: _ } = r(9023);
     let F = false;
     class WebSocket extends EventTarget {
       #u = { open: null, error: null, close: null, message: null };
@@ -19967,7 +19967,7 @@ var t = {
           t.write(o, () => {
             this.#g -= r.byteLength;
           });
-        } else if (D.isArrayBuffer(e)) {
+        } else if (_.isArrayBuffer(e)) {
           const r = Buffer.from(e);
           const s = new b(r);
           const o = s.createFrame(c.BINARY);
@@ -20155,7 +20155,7 @@ var t = {
         key: "dispatcher",
         converter: (e) => e,
         get defaultValue() {
-          return _();
+          return D();
         },
       },
       { key: "headers", converter: s.nullableConverter(s.converters.HeadersInit) },
@@ -20171,7 +20171,7 @@ var t = {
         if (k(e)) {
           return s.converters.Blob(e, { strict: false });
         }
-        if (ArrayBuffer.isView(e) || D.isAnyArrayBuffer(e)) {
+        if (ArrayBuffer.isView(e) || _.isAnyArrayBuffer(e)) {
           return s.converters.BufferSource(e);
         }
       }
@@ -20874,8 +20874,8 @@ var t = {
       const R = c(h, "fields", Infinity);
       const T = c(h, "parts", Infinity);
       const k = c(h, "headerPairs", 2e3);
-      const _ = c(h, "headerSize", 80 * 1024);
-      let D = 0;
+      const D = c(h, "headerSize", 80 * 1024);
+      let _ = 0;
       let F = 0;
       let S = 0;
       let v;
@@ -20886,7 +20886,7 @@ var t = {
       this._cb = undefined;
       this._nparts = 0;
       this._boy = e;
-      const G = { boundary: d, maxHeaderPairs: k, maxHeaderSize: _, partHwm: B.highWaterMark, highWaterMark: t.highWaterMark };
+      const G = { boundary: d, maxHeaderPairs: k, maxHeaderSize: D, partHwm: B.highWaterMark, highWaterMark: t.highWaterMark };
       this.parser = new A(G);
       this.parser
         .on("drain", function () {
@@ -20959,16 +20959,16 @@ var t = {
             } else {
               C = "7bit";
             }
-            let _, N;
+            let D, N;
             if (I(l, c, T)) {
-              if (D === b) {
+              if (_ === b) {
                 if (!e.hitFilesLimit) {
                   e.hitFilesLimit = true;
                   e.emit("filesLimit");
                 }
                 return skipPart(t);
               }
-              ++D;
+              ++_;
               if (e.listenerCount("file") === 0) {
                 o.parser._ignore();
                 return;
@@ -20998,7 +20998,7 @@ var t = {
                 }
               };
               e.emit("file", l, r, T, C, c);
-              _ = function (e) {
+              D = function (e) {
                 if ((k += e.length) > w) {
                   const s = w - k + e.length;
                   if (s > 0) {
@@ -21031,7 +21031,7 @@ var t = {
               let r = "";
               let s = false;
               U = t;
-              _ = function (e) {
+              D = function (e) {
                 if ((k += e.length) > y) {
                   const o = y - (k - e.length);
                   r += e.toString("binary", 0, o);
@@ -21052,7 +21052,7 @@ var t = {
               };
             }
             t._readableState.sync = false;
-            t.on("data", _);
+            t.on("data", D);
             t.on("end", N);
           }).on("error", function (e) {
             if (v) {
@@ -22184,7 +22184,7 @@ function __nccwpck_require__(e) {
 if (typeof __nccwpck_require__ !== "undefined")
   __nccwpck_require__.ab = new URL(".", import.meta.url).pathname.slice(import.meta.url.match(/^file:\/\/\/\w:/) ? 1 : 0, -1) + "/";
 var s = {};
-__nccwpck_require__.d(s, { A: () => _t });
+__nccwpck_require__.d(s, { A: () => Dt });
 var o = {};
 __nccwpck_require__.r(o);
 __nccwpck_require__.d(o, {
@@ -23031,8 +23031,8 @@ var C = class {
   #R;
   #T;
   #k;
-  #_;
-  #D = true;
+  #D;
+  #_ = true;
   #F;
   #S;
   #v;
@@ -23067,19 +23067,19 @@ var C = class {
     }
   }
   get res() {
-    this.#D = false;
-    return (this.#_ ||= new Response("404 Not Found", { status: 404 }));
+    this.#_ = false;
+    return (this.#D ||= new Response("404 Not Found", { status: 404 }));
   }
   set res(e) {
-    this.#D = false;
-    if (this.#_ && e) {
+    this.#_ = false;
+    if (this.#D && e) {
       try {
-        for (const [t, r] of this.#_.headers.entries()) {
+        for (const [t, r] of this.#D.headers.entries()) {
           if (t === "content-type") {
             continue;
           }
           if (t === "set-cookie") {
-            const t = this.#_.headers.getSetCookie();
+            const t = this.#D.headers.getSetCookie();
             e.headers.delete("set-cookie");
             for (const r of t) {
               e.headers.append("set-cookie", r);
@@ -23097,7 +23097,7 @@ var C = class {
         }
       }
     }
-    this.#_ = e;
+    this.#D = e;
     this.finalized = true;
   }
   render = (...e) => {
@@ -23123,7 +23123,7 @@ var C = class {
     }
     if (r?.append) {
       if (!this.#T) {
-        this.#D = false;
+        this.#_ = false;
         this.#T = new Headers(this.#k);
         this.#k = {};
       }
@@ -23145,7 +23145,7 @@ var C = class {
     }
   };
   status = (e) => {
-    this.#D = false;
+    this.#_ = false;
     this.#b = e;
   };
   set = (e, t) => {
@@ -23160,7 +23160,7 @@ var C = class {
     return Object.fromEntries(this.#w);
   }
   #N(e, t, r) {
-    if (this.#D && !r && !t && this.#b === 200) {
+    if (this.#_ && !r && !t && this.#b === 200) {
       return new Response(e, { headers: this.#k });
     }
     if (t && typeof t !== "number") {
@@ -23181,8 +23181,8 @@ var C = class {
     this.#k ??= {};
     this.#T ??= new Headers();
     setHeaders(this.#T, this.#k);
-    if (this.#_) {
-      this.#_.headers.forEach((e, t) => {
+    if (this.#D) {
+      this.#D.headers.forEach((e, t) => {
         if (t === "set-cookie") {
           this.#T?.append(t, e);
         } else {
@@ -23208,7 +23208,7 @@ var C = class {
   body = (e, t, r) => (typeof t === "number" ? this.#N(e, t, r) : this.#N(e, t));
   text = (e, t, r) => {
     if (!this.#k) {
-      if (this.#D && !r && !t) {
+      if (this.#_ && !r && !t) {
         return new Response(e);
       }
       this.#k = {};
@@ -23494,8 +23494,8 @@ var R = class {
 };
 var T = "[^/]+";
 var k = ".*";
-var _ = "(?:|/.*)";
-var D = Symbol();
+var D = "(?:|/.*)";
+var _ = Symbol();
 var F = new Set(".\\+*[^]$()");
 function compareKey(e, t) {
   if (e.length === 1) {
@@ -23504,9 +23504,9 @@ function compareKey(e, t) {
   if (t.length === 1) {
     return 1;
   }
-  if (e === k || e === _) {
+  if (e === k || e === D) {
     return 1;
-  } else if (t === k || t === _) {
+  } else if (t === k || t === D) {
     return -1;
   }
   if (e === T) {
@@ -23523,7 +23523,7 @@ var S = class {
   insert(e, t, r, s, o) {
     if (e.length === 0) {
       if (this.#M !== void 0) {
-        throw D;
+        throw _;
       }
       if (o) {
         return;
@@ -23532,7 +23532,7 @@ var S = class {
       return;
     }
     const [A, ...n] = e;
-    const i = A === "*" ? (n.length === 0 ? ["", "", k] : ["", "", T]) : A === "/*" ? ["", "", _] : A.match(/^\:([^\{\}]+)(?:\{(.+)\})?$/);
+    const i = A === "*" ? (n.length === 0 ? ["", "", k] : ["", "", T]) : A === "/*" ? ["", "", D] : A.match(/^\:([^\{\}]+)(?:\{(.+)\})?$/);
     let a;
     if (i) {
       const e = i[1];
@@ -23540,13 +23540,13 @@ var S = class {
       if (e && i[2]) {
         t = t.replace(/^\((?!\?:)(?=[^)]+\)$)/, "(?:");
         if (/\((?!\?:)/.test(t)) {
-          throw D;
+          throw _;
         }
       }
       a = this.#H[t];
       if (!a) {
-        if (Object.keys(this.#H).some((e) => e !== k && e !== _)) {
-          throw D;
+        if (Object.keys(this.#H).some((e) => e !== k && e !== D)) {
+          throw _;
         }
         if (o) {
           return;
@@ -23562,8 +23562,8 @@ var S = class {
     } else {
       a = this.#H[A];
       if (!a) {
-        if (Object.keys(this.#H).some((e) => e.length > 1 && e !== k && e !== _)) {
-          throw D;
+        if (Object.keys(this.#H).some((e) => e.length > 1 && e !== k && e !== D)) {
+          throw _;
         }
         if (o) {
           return;
@@ -23673,7 +23673,7 @@ function buildMatcherFromPreprocessedRoutes(e) {
     try {
       c = t.insert(i, A, n);
     } catch (e) {
-      throw e === D ? new w(i) : e;
+      throw e === _ ? new w(i) : e;
     }
     if (n) {
       continue;
@@ -26374,7 +26374,7 @@ async function doRequest(e, t, r) {
   }
   return c;
 }
-var _e = [
+var De = [
   "/orgs/{org}/invitations",
   "/orgs/{org}/invitations/{invitation_id}",
   "/orgs/{org}/teams/{team_slug}/discussions",
@@ -26405,8 +26405,8 @@ function routeMatcher(e) {
   const r = `^(?:${t.map((e) => `(?:${e})`).join("|")})[^/]*$`;
   return new RegExp(r, "i");
 }
-var De = routeMatcher(_e);
-var Fe = De.test.bind(De);
+var _e = routeMatcher(De);
+var Fe = _e.test.bind(_e);
 var Se = {};
 var createGroups = function (e, t) {
   Se.global = new e.Group({ id: "octokit-global", maxConcurrent: 10, ...t });
@@ -26598,22 +26598,22 @@ function paginateGraphQL(e) {
   return { graphql: Object.assign(e.graphql, { paginate: Object.assign(createPaginate(e), { iterator: createIterator(e) }) }) };
 }
 function IsAsyncIterator(e) {
-  return IsObject(e) && globalThis.Symbol.asyncIterator in e;
+  return IsObject(e) && Symbol.asyncIterator in e;
 }
 function IsIterator(e) {
-  return IsObject(e) && globalThis.Symbol.iterator in e;
+  return IsObject(e) && Symbol.iterator in e;
 }
 function IsStandardObject(e) {
-  return IsObject(e) && (globalThis.Object.getPrototypeOf(e) === Object.prototype || globalThis.Object.getPrototypeOf(e) === null);
+  return IsObject(e) && (Object.getPrototypeOf(e) === Object.prototype || Object.getPrototypeOf(e) === null);
 }
 function IsInstanceObject(e) {
   return IsObject(e) && !IsArray(e) && IsFunction(e.constructor) && e.constructor.name !== "Object";
 }
 function IsPromise(e) {
-  return e instanceof globalThis.Promise;
+  return e instanceof Promise;
 }
 function IsDate(e) {
-  return e instanceof Date && globalThis.Number.isFinite(e.getTime());
+  return e instanceof Date && Number.isFinite(e.getTime());
 }
 function IsMap(e) {
   return e instanceof globalThis.Map;
@@ -26625,7 +26625,7 @@ function IsRegExp(e) {
   return e instanceof globalThis.RegExp;
 }
 function IsTypedArray(e) {
-  return globalThis.ArrayBuffer.isView(e);
+  return ArrayBuffer.isView(e);
 }
 function IsInt8Array(e) {
   return e instanceof globalThis.Int8Array;
@@ -26667,7 +26667,7 @@ function IsObject(e) {
   return e !== null && typeof e === "object";
 }
 function IsArray(e) {
-  return globalThis.Array.isArray(e) && !globalThis.ArrayBuffer.isView(e);
+  return Array.isArray(e) && !ArrayBuffer.isView(e);
 }
 function IsUndefined(e) {
   return e === undefined;
@@ -26682,7 +26682,7 @@ function IsNumber(e) {
   return typeof e === "number";
 }
 function IsInteger(e) {
-  return globalThis.Number.isInteger(e);
+  return Number.isInteger(e);
 }
 function IsBigInt(e) {
   return typeof e === "bigint";
@@ -26875,7 +26875,7 @@ function array_Array(e, t) {
 function AsyncIterator(e, t) {
   return CreateType({ [xe]: "AsyncIterator", type: "AsyncIterator", items: e }, t);
 }
-function computed_Computed(e, t, r) {
+function Computed(e, t, r) {
   return CreateType({ [xe]: "Computed", target: e, parameters: t }, r);
 }
 function Never(e) {
@@ -27029,7 +27029,6 @@ function IsSchema(e) {
     kind_IsBoolean(e) ||
     kind_IsBigInt(e) ||
     kind_IsAsyncIterator(e) ||
-    IsComputed(e) ||
     IsConstructor(e) ||
     kind_IsDate(e) ||
     kind_IsFunction(e) ||
@@ -27084,21 +27083,14 @@ function UnionCreate(e, t) {
 function Union(e, t) {
   return e.length === 0 ? Never(t) : e.length === 1 ? CreateType(e[0], t) : UnionCreate(e, t);
 }
-class error_TypeBoxError extends Error {
-  constructor(e) {
-    super(e);
-  }
-}
-function Ref(...e) {
-  const [t, r] = typeof e[0] === "string" ? [e[0], e[1]] : [e[0].$id, e[1]];
-  if (typeof t !== "string") throw new error_TypeBoxError("Ref: $ref must be a string");
-  return CreateType({ [xe]: "Ref", $ref: t }, r);
+function Ref(e, t) {
+  return CreateType({ [xe]: "Ref", $ref: e }, t);
 }
 function FromComputed(e, t) {
-  return computed_Computed("Awaited", [computed_Computed(e, t)]);
+  return Computed("Awaited", [Computed(e, t)]);
 }
 function FromRef(e) {
-  return computed_Computed("Awaited", [Ref(e)]);
+  return Computed("Awaited", [Ref(e)]);
 }
 function FromIntersect(e) {
   return Intersect(FromRest(e));
@@ -27187,6 +27179,9 @@ function IntersectEvaluated(e, t = {}) {
   if (e.some((e) => IsTransform(e))) throw new Error("Cannot intersect transform types");
   return ResolveIntersect(e, t);
 }
+function Literal(e, t) {
+  return CreateType({ [xe]: "Literal", const: e, type: typeof e }, t);
+}
 function IsUnionOptional(e) {
   return e.some((e) => IsOptional(e));
 }
@@ -27202,6 +27197,11 @@ function ResolveUnion(e, t) {
 }
 function UnionEvaluated(e, t) {
   return e.length === 1 ? CreateType(e[0], t) : e.length === 0 ? Never(t) : ResolveUnion(e, t);
+}
+class error_TypeBoxError extends Error {
+  constructor(e) {
+    super(e);
+  }
 }
 class TemplateLiteralParserError extends error_TypeBoxError {}
 function Unescape(e) {
@@ -27425,7 +27425,8 @@ function IndexFromMappedKey(e, t, r) {
 function indexed_from_mapped_result_FromProperties(e, t, r) {
   const s = {};
   for (const o of Object.getOwnPropertyNames(t)) {
-    s[o] = Index(e, IndexPropertyKeys(t[o]), r);
+    const A = IndexPropertyKeys(t[o]);
+    s[o] = Index(e, A, r);
   }
   return s;
 }
@@ -27452,7 +27453,7 @@ function indexed_FromUnion(e, t) {
   return UnionEvaluated(FromUnionRest(indexed_FromRest(e, t)));
 }
 function FromTuple(e, t) {
-  return t in e ? e[t] : t === "[number]" ? UnionEvaluated(e) : Never();
+  return t === "[number]" ? UnionEvaluated(e) : t in e ? e[t] : Never();
 }
 function FromArray(e, t) {
   return t === "[number]" ? e : Never();
@@ -27476,21 +27477,30 @@ function IndexFromPropertyKey(e, t) {
 function IndexFromPropertyKeys(e, t) {
   return t.map((t) => IndexFromPropertyKey(e, t));
 }
-function FromSchema(e, t) {
-  return UnionEvaluated(IndexFromPropertyKeys(e, t));
+function FromType(e, t) {
+  const r = IndexFromPropertyKeys(e, t);
+  return UnionEvaluated(r);
 }
-function IndexFromComputed(e, t) {
-  return Computed("Index", [e, t]);
+function UnionFromPropertyKeys(e) {
+  const t = e.reduce((e, t) => (IsLiteralValue(t) ? [...e, Literal(t)] : e), []);
+  return UnionEvaluated(t);
 }
 function Index(e, t, r) {
-  if (IsRef(e) || IsRef(t)) {
-    const r = `Index types using Ref parameters require both Type and Key to be of TSchema`;
-    if (!IsSchema(e) || !IsSchema(t)) throw new error_TypeBoxError(r);
-    return computed_Computed("Index", [e, t]);
-  }
-  if (IsMappedResult(t)) return IndexFromMappedResult(e, t, r);
-  if (IsMappedKey(t)) return IndexFromMappedKey(e, t, r);
-  return CreateType(IsSchema(t) ? FromSchema(e, IndexPropertyKeys(t)) : FromSchema(e, t), r);
+  const s = value_IsArray(t) ? UnionFromPropertyKeys(t) : t;
+  const o = IsSchema(t) ? IndexPropertyKeys(t) : t;
+  const A = IsRef(e);
+  const n = IsRef(t);
+  return IsMappedResult(t)
+    ? IndexFromMappedResult(e, t, r)
+    : IsMappedKey(t)
+      ? IndexFromMappedKey(e, t, r)
+      : A && n
+        ? Computed("Index", [e, s], r)
+        : !A && n
+          ? Computed("Index", [e, s], r)
+          : A && !n
+            ? Computed("Index", [e, s], r)
+            : CreateType(FromType(e, o), r);
 }
 function SetIncludes(e, t) {
   return e.includes(t);
@@ -27617,9 +27627,6 @@ function date_Date(e) {
 }
 function function_Function(e, t, r) {
   return CreateType({ [xe]: "Function", type: "Function", parameters: e, returns: t }, r);
-}
-function Literal(e, t) {
-  return CreateType({ [xe]: "Literal", const: e, type: typeof e }, t);
 }
 function Null(e) {
   return CreateType({ [xe]: "Null", type: "null" }, e);
@@ -27869,7 +27876,7 @@ function type_IsBoolean(e) {
   return type_IsKindOf(e, "Boolean") && e.type === "boolean" && IsOptionalString(e.$id);
 }
 function type_IsComputed(e) {
-  return type_IsKindOf(e, "Computed") && value_IsString(e.target) && value_IsArray(e.parameters) && e.parameters.every((e) => type_IsSchema(e));
+  return type_IsKindOf(e, "Computed") && type_IsString(e.target) && ValueGuard.IsArray(e.parameters) && e.parameters.every((e) => type_IsSchema(e));
 }
 function type_IsConstructor(e) {
   return (
@@ -28106,7 +28113,6 @@ function type_IsSchema(e) {
       type_IsBoolean(e) ||
       type_IsBigInt(e) ||
       type_IsAsyncIterator(e) ||
-      type_IsComputed(e) ||
       type_IsConstructor(e) ||
       type_IsDate(e) ||
       type_IsFunction(e) ||
@@ -28959,10 +28965,10 @@ function KeyOfFromMappedResult(e, t) {
   return MappedResult(r);
 }
 function keyof_FromComputed(e, t) {
-  return computed_Computed("KeyOf", [computed_Computed(e, t)]);
+  return Computed("KeyOf", [Computed(e, t)]);
 }
 function keyof_FromRef(e) {
-  return computed_Computed("KeyOf", [Ref(e)]);
+  return Computed("KeyOf", [Ref(e)]);
 }
 function KeyOfFromType(e, t) {
   const r = KeyOfPropertyKeys(e);
@@ -29097,7 +29103,7 @@ function omit_FromObject(e, t) {
   const s = omit_FromProperties(e["properties"], t);
   return Ve(s, r);
 }
-function UnionFromPropertyKeys(e) {
+function omit_UnionFromPropertyKeys(e) {
   const t = e.reduce((e, t) => (IsLiteralValue(t) ? [...e, Literal(t)] : e), []);
   return Union(t);
 }
@@ -29111,7 +29117,7 @@ function OmitResolve(e, t) {
         : Ve({});
 }
 function Omit(e, t, r) {
-  const s = value_IsArray(t) ? UnionFromPropertyKeys(t) : t;
+  const s = value_IsArray(t) ? omit_UnionFromPropertyKeys(t) : t;
   const o = IsSchema(t) ? IndexPropertyKeys(t) : t;
   const A = IsRef(e);
   const n = IsRef(t);
@@ -29120,11 +29126,11 @@ function Omit(e, t, r) {
     : IsMappedKey(t)
       ? OmitFromMappedKey(e, t, r)
       : A && n
-        ? computed_Computed("Omit", [e, s], r)
+        ? Computed("Omit", [e, s], r)
         : !A && n
-          ? computed_Computed("Omit", [e, s], r)
+          ? Computed("Omit", [e, s], r)
           : A && !n
-            ? computed_Computed("Omit", [e, s], r)
+            ? Computed("Omit", [e, s], r)
             : CreateType({ ...OmitResolve(e, o), ...r });
 }
 function pick_from_mapped_key_FromPropertyKey(e, t, r) {
@@ -29191,11 +29197,11 @@ function Pick(e, t, r) {
     : IsMappedKey(t)
       ? PickFromMappedKey(e, t, r)
       : A && n
-        ? computed_Computed("Pick", [e, s], r)
+        ? Computed("Pick", [e, s], r)
         : !A && n
-          ? computed_Computed("Pick", [e, s], r)
+          ? Computed("Pick", [e, s], r)
           : A && !n
-            ? computed_Computed("Pick", [e, s], r)
+            ? Computed("Pick", [e, s], r)
             : CreateType({ ...PickResolve(e, o), ...r });
 }
 function partial_from_mapped_result_FromProperties(e, t) {
@@ -29211,10 +29217,10 @@ function PartialFromMappedResult(e, t) {
   return MappedResult(r);
 }
 function partial_FromComputed(e, t) {
-  return computed_Computed("Partial", [computed_Computed(e, t)]);
+  return Computed("Partial", [Computed(e, t)]);
 }
 function partial_FromRef(e) {
-  return computed_Computed("Partial", [Ref(e)]);
+  return Computed("Partial", [Ref(e)]);
 }
 function partial_FromProperties(e) {
   const t = {};
@@ -29286,31 +29292,29 @@ function FromNumberKey(e, t, r) {
   return RecordCreateFromPattern(Ke, t, r);
 }
 function Record(e, t, r = {}) {
-  return IsComputed(t)
-    ? computed_Computed("Record", [e, computed_Computed(t.target, t.parameters)], r)
-    : IsComputed(e)
-      ? computed_Computed("Record", [computed_Computed(t.target, t.parameters), t], r)
-      : IsRef(e)
-        ? computed_Computed("Record", [Ref(e.$ref), t])
-        : IsUnion(e)
-          ? FromUnionKey(e.anyOf, t, r)
-          : IsTemplateLiteral(e)
-            ? FromTemplateLiteralKey(e, t, r)
-            : IsLiteral(e)
-              ? FromLiteralKey(e.const, t, r)
-              : kind_IsInteger(e)
-                ? FromIntegerKey(e, t, r)
-                : kind_IsNumber(e)
-                  ? FromNumberKey(e, t, r)
-                  : kind_IsRegExp(e)
-                    ? FromRegExpKey(e, t, r)
-                    : kind_IsString(e)
-                      ? FromStringKey(e, t, r)
-                      : IsAny(e)
-                        ? FromAnyKey(e, t, r)
-                        : IsNever(e)
-                          ? FromNeverKey(e, t, r)
-                          : Never(r);
+  return IsRef(t)
+    ? Computed("Record", [e, t])
+    : IsRef(e)
+      ? Computed("Record", [e, t])
+      : IsUnion(e)
+        ? FromUnionKey(e.anyOf, t, r)
+        : IsTemplateLiteral(e)
+          ? FromTemplateLiteralKey(e, t, r)
+          : IsLiteral(e)
+            ? FromLiteralKey(e.const, t, r)
+            : kind_IsInteger(e)
+              ? FromIntegerKey(e, t, r)
+              : kind_IsNumber(e)
+                ? FromNumberKey(e, t, r)
+                : kind_IsRegExp(e)
+                  ? FromRegExpKey(e, t, r)
+                  : kind_IsString(e)
+                    ? FromStringKey(e, t, r)
+                    : IsAny(e)
+                      ? FromAnyKey(e, t, r)
+                      : IsNever(e)
+                        ? FromNeverKey(e, t, r)
+                        : Never(r);
 }
 function required_from_mapped_result_FromProperties(e, t) {
   const r = {};
@@ -29325,10 +29329,10 @@ function RequiredFromMappedResult(e, t) {
   return MappedResult(r);
 }
 function required_FromComputed(e, t) {
-  return computed_Computed("Required", [computed_Computed(e, t)]);
+  return Computed("Required", [Computed(e, t)]);
 }
 function required_FromRef(e) {
-  return computed_Computed("Required", [Ref(e)]);
+  return Computed("Required", [Ref(e)]);
 }
 function required_FromProperties(e) {
   const t = {};
@@ -29364,10 +29368,10 @@ function Required(e, t) {
   }
 }
 function DerefParameters(e, t) {
-  return t.map((t) => (IsRef(t) ? Deref(e, t.$ref) : FromType(e, t)));
+  return t.map((t) => (IsRef(t) ? Deref(e, t.$ref) : compute_FromType(e, t)));
 }
 function Deref(e, t) {
-  return t in e ? (IsRef(e[t]) ? Deref(e, e[t].$ref) : FromType(e, e[t])) : Never();
+  return t in e ? (IsRef(e[t]) ? Deref(e, e[t].$ref) : compute_FromType(e, e[t])) : Never();
 }
 function FromAwaited(e) {
   return Awaited(e[0]);
@@ -29414,13 +29418,13 @@ function compute_FromComputed(e, t, r) {
                   : Never();
 }
 function compute_FromObject(e, t) {
-  return Ve(globalThis.Object.keys(t).reduce((r, s) => ({ ...r, [s]: FromType(e, t[s]) }), {}));
+  return Ve(globalThis.Object.keys(t).reduce((r, s) => ({ ...r, [s]: compute_FromType(e, t[s]) }), {}));
 }
 function compute_FromConstructor(e, t, r) {
-  return Constructor(compute_FromRest(e, t), FromType(e, r));
+  return Constructor(compute_FromRest(e, t), compute_FromType(e, r));
 }
 function compute_FromFunction(e, t, r) {
-  return function_Function(compute_FromRest(e, t), FromType(e, r));
+  return function_Function(compute_FromRest(e, t), compute_FromType(e, r));
 }
 function compute_FromTuple(e, t) {
   return Tuple(compute_FromRest(e, t));
@@ -29432,46 +29436,42 @@ function compute_FromUnion(e, t) {
   return Union(compute_FromRest(e, t));
 }
 function compute_FromArray(e, t) {
-  return array_Array(FromType(e, t));
+  return array_Array(compute_FromType(e, t));
 }
 function compute_FromAsyncIterator(e, t) {
-  return AsyncIterator(FromType(e, t));
+  return AsyncIterator(compute_FromType(e, t));
 }
 function compute_FromIterator(e, t) {
-  return Iterator(FromType(e, t));
+  return Iterator(compute_FromType(e, t));
 }
 function compute_FromRest(e, t) {
-  return t.map((t) => FromType(e, t));
+  return t.map((t) => compute_FromType(e, t));
 }
-function FromType(e, t) {
-  return IsOptional(t)
-    ? CreateType(FromType(e, Discard(t, [Pe])), t)
-    : IsReadonly(t)
-      ? CreateType(FromType(e, Discard(t, [Le])), t)
-      : kind_IsArray(t)
-        ? CreateType(compute_FromArray(e, t.items), t)
-        : kind_IsAsyncIterator(t)
-          ? CreateType(compute_FromAsyncIterator(e, t.items), t)
-          : IsComputed(t)
-            ? CreateType(compute_FromComputed(e, t.target, t.parameters))
-            : IsConstructor(t)
-              ? CreateType(compute_FromConstructor(e, t.parameters, t.returns), t)
-              : kind_IsFunction(t)
-                ? CreateType(compute_FromFunction(e, t.parameters, t.returns), t)
-                : IsIntersect(t)
-                  ? CreateType(compute_FromIntersect(e, t.allOf), t)
-                  : kind_IsIterator(t)
-                    ? CreateType(compute_FromIterator(e, t.items), t)
-                    : kind_IsObject(t)
-                      ? CreateType(compute_FromObject(e, t.properties), t)
-                      : IsTuple(t)
-                        ? CreateType(compute_FromTuple(e, t.items || []), t)
-                        : IsUnion(t)
-                          ? CreateType(compute_FromUnion(e, t.anyOf), t)
-                          : t;
+function compute_FromType(e, t) {
+  return IsComputed(t)
+    ? CreateType(compute_FromComputed(e, t.target, t.parameters))
+    : kind_IsObject(t)
+      ? CreateType(compute_FromObject(e, t.properties), t)
+      : IsConstructor(t)
+        ? CreateType(compute_FromConstructor(e, t.parameters, t.returns), t)
+        : kind_IsFunction(t)
+          ? CreateType(compute_FromFunction(e, t.parameters, t.returns), t)
+          : IsTuple(t)
+            ? CreateType(compute_FromTuple(e, t.items || []), t)
+            : IsIntersect(t)
+              ? CreateType(compute_FromIntersect(e, t.allOf), t)
+              : IsUnion(t)
+                ? CreateType(compute_FromUnion(e, t.anyOf), t)
+                : kind_IsArray(t)
+                  ? CreateType(compute_FromArray(e, t.items), t)
+                  : kind_IsAsyncIterator(t)
+                    ? CreateType(compute_FromAsyncIterator(e, t.items), t)
+                    : kind_IsIterator(t)
+                      ? CreateType(compute_FromIterator(e, t.items), t)
+                      : t;
 }
 function ComputeType(e, t) {
-  return t in e ? FromType(e, e[t]) : Never();
+  return t in e ? compute_FromType(e, e[t]) : Never();
 }
 function ComputeModuleProperties(e) {
   return globalThis.Object.getOwnPropertyNames(e).reduce((t, r) => ({ ...t, [r]: ComputeType(e, r) }), {});
@@ -29483,8 +29483,7 @@ class TModule {
     this.$defs = r;
   }
   Import(e, t) {
-    const r = { ...this.$defs, [e]: CreateType(this.$defs[e], t) };
-    return CreateType({ [xe]: "Import", $defs: r, $ref: e });
+    return CreateType({ [xe]: "Import", $defs: this.$defs, $ref: e }, t);
   }
   WithIdentifiers(e) {
     return globalThis.Object.getOwnPropertyNames(e).reduce((t, r) => ({ ...t, [r]: { ...e[r], $id: r } }), {});
@@ -31618,31 +31617,18 @@ async function helloWorld(e) {
   const { logger: t, payload: r } = e;
   const s = r.comment.user?.login;
   const o = r.repository.name;
-  const A = r.issue.number;
-  const n = r.repository.owner.login;
-  const i = r.comment.body;
-  if (!i.trim().startsWith("@")) {
-    throw t.error(`Comment does not start with @`, { body: i });
-  }
-  t.debug(`Executing helloWorld:`, { sender: s, repo: o, issueNumber: A, owner: n });
-  await postComment(e, t.ok("Hello, world!"));
+  t.debug(`Executing helloWorld:`, { sender: s, repo: o });
+  throw new Error("This is an error!");
   t.ok(`Successfully created comment!`);
   t.verbose(`Exiting helloWorld`);
 }
-function isIssueCommentEvent(e) {
-  return e.eventName === "issue_comment.created";
-}
 async function runPlugin(e) {
-  const { logger: t, eventName: r } = e;
-  if (isIssueCommentEvent(e)) {
-    return await helloWorld(e);
-  }
-  t.error(`Unsupported event: ${r}`);
+  return await helloWorld(e);
 }
 var Rt = __nccwpck_require__(2874);
 const Tt = tt.Object({ LOG_LEVEL: tt.Optional(tt.Enum(n, { default: n.INFO })), KERNEL_PUBLIC_KEY: tt.Optional(tt.String()) });
 const kt = tt.Object({}, { default: {} });
-const _t = createActionsPlugin((e) => runPlugin(e), {
+const Dt = createActionsPlugin((e) => runPlugin(e), {
   logLevel: process.env.LOG_LEVEL || n.INFO,
   settingsSchema: kt,
   envSchema: Tt,
@@ -31650,6 +31636,6 @@ const _t = createActionsPlugin((e) => runPlugin(e), {
   postCommentOnError: true,
   bypassSignatureVerification: true,
 });
-var Dt = s.A;
-export { Dt as default };
+var _t = s.A;
+export { _t as default };
 //# sourceMappingURL=index.js.map
